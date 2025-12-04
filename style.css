@@ -1,26 +1,36 @@
-header {
-    font-family:  'Arial Narrow', sans-serif;
-    font-size: 24px;
-    text-align: center;
-    color: white;
-    padding: 20px 0;
-    background-color: #3f89dd;
+.profile-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    margin: auto 20px;
+    background-color: #d5d8eb;
 }
 
-#profile-img {
+#name {
+    background-color: rgb(255, 46, 46);
+    background-image: linear-gradient(to top, #0019fc, #00a2ff);
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    align-items: center;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+#self-img{
     border-radius: 50%;
-    width: 350px;
+    height: 200px;
+    width: 200px;
     height: auto;
     object-fit: cover;
     margin: auto;
-}
-
-body {
-    background-color: #ffffff;
-    color: #333333;
-    font-family: 'Verdana', sans-serif;
-    margin: 0;
-    padding: 0;
+    border: 2px solid #00f; /* base border */
+    box-shadow: 0 0 10px #00f; 
 }
 
 button {
@@ -31,50 +41,113 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: bold;
 }
 
-#certiport-cert {
+body {
+    color: #333333;
+    font-family: 'Verdana', sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
-    display: block;
+    height: 100%;
+    background: url("/images/trybg.png") no-repeat center center;
+    background-size: cover;
+    filter: blur(20px); 
+    z-index: -1; 
 }
 
-#fallacies-cert{
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
-    display: block;
+#main-content{
+    padding: 20px;
+    margin: auto 20px;
 }
 
-#Cplus-cert{
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
-    display: block;
+#cert-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: auto 20px;
 }
 
-#achievements {
-    text-align: left;
-    margin: 40px 0;
-    padding: 0 20px;
+.cert-container ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
 }
-#projects {
-    text-align: left;
-    margin: 40px 0;
-    padding: 0 20px;
+.cert-container li {
+    display: flex;          /* stack text and image neatly */
+    flex-direction: column-reverse; /* text above, image below */
+    align-items: center;    /* center content horizontally */
 }
 
-h2 {
-    font-family: 'Tahoma', sans-serif;
-    font-size: 40px;
-    margin-bottom: 10px;
+.cert-container .cert{
+    max-width: 250px;
+    height: auto;
+    margin-top: 10px auto;
+}
+
+.projects-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.projects-container ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.projects-container li {
+    display: flex;          /* stack text and image neatly */
+    flex-direction: column-reverse; /* text above, image below */
+    align-items: center;    /* center content horizontally */
 }
 
 body.dark {
 	background-color: #121212;
 	color: #f5f5f5;
-    header {
-        background-color: #090f61;
-    }
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark .profile-container{
+    background-color: #202020;
+}
+
+
+body.dark #name{
+    background-image: linear-gradient(to top,#d3b50e, #e3fc00);
+}
+
+body.dark #self-img{
+    border: 2px solid #e3fc00; /* base border */
+    box-shadow: 0 0 10px #f0cf18; 
+}
+
+body.dark button {
+    background-color: #f0cf18;
+    color: #121212;
+}
+
+body.dark::before {
+    background: url("/images/darkBG.png") no-repeat center center;
 }
