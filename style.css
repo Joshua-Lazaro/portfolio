@@ -31,7 +31,8 @@
 
 #self-img{
     border-radius: 50%;
-    height: 200px;
+    height: auto;
+    max-height: 200px;
     width: 200px;
     object-fit: cover;
     margin: 0;
@@ -238,4 +239,78 @@ body.dark button {
 
 body.dark::before {
     background: url("images/darkBG.png") center center;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;  
+        gap: 20px;             
+        padding: 15px;
+        max-width: 95%;          
+    }
+
+    #self-img {
+        width: 150px;           
+        max-height: 150px;
+    }
+
+    .profile-container h1{
+        font-size: 1.2rem;     
+        text-align: center;
+    }
+    #name {
+        font-size: 1.2rem;        
+        text-align: center;       
+    }
+    #course-year {
+        font-size: 1.2rem;    
+        text-align: center;     
+    }
+
+    #about-me,
+    #achievements-content,
+    .projects-container,
+    .current-container {
+        flex-direction: column; 
+        gap: 20px;
+        padding: 15px;
+        max-width: 95%;
+    }
+
+    #cert-container {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .cert-container ul,
+    .projects-container ul {
+        flex-direction: column;   
+        gap: 15px;
+    }
+
+    button {
+        width: 100%;            
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    body::before {
+        background-size: cover;  
+    }
+}
+
+@media (max-width: 480px) {
+    #name {
+        font-size: 1.2rem;
+    }
+
+    #self-img {
+        width: 120px;
+        max-height: 120px;
+    }
+
+    .proj a {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
 }
